@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
 import Category from './Category';
@@ -28,9 +29,9 @@ const App = () => (
     </nav>
 
     <Switch>
-      <Route exact path="/" component={Home}/>
-      <Route path="/category" component={Category}/>
-      <Route path="/products" component={Products}/>
+      <Route exact path="/" component={Home} />
+      <Route path="/category" component={Category} />
+      <Route path="/products" component={Products} />
     </Switch>
 
   </div>
