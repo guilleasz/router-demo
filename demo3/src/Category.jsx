@@ -1,9 +1,7 @@
-// @flow
 import React from 'react';
-import { type Match } from 'react-router';
 import { Link, Route } from 'react-router-dom';
 
-const Category = ({ match }: { match: Match }) => (
+const Category = ({ match }) => (
   <div>
     <ul>
       <li><Link to={`${match.url}/shoes`}>Shoes</Link></li>

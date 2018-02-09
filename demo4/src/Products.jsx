@@ -1,18 +1,10 @@
-// @flow
 import React from 'react';
-import { Route, type Match } from 'react-router';
+import { Route } from 'react-router';
 import { Link } from 'react-router-dom';
 import Product from './Product';
 
-export type ProductItem = {
-  id: number,
-  name: string,
-  description: string,
-  status: string,
-}
-
-const Products = ({ match }: { match: Match }) => {
-  const productsData: ProductItem[] = [
+const Products = ({ match }) => {
+  const productsData = [
     {
       id: 1,
       name: 'NIKE Liteforce Blue Sneakers',

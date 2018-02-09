@@ -1,18 +1,10 @@
-// @flow
 import React from 'react';
-import { type ContextRouter } from 'react-router';
 import { Redirect } from 'react-router-dom';
-
-type State = {
-  redirectToReferrer: boolean,
-};
-
-type Props = ContextRouter
 
 /* Una función de autenticación falsa */
 export const fakeAuth = {
   isAuthenticated: false,
-  authenticate(cb: () => void) {
+  authenticate(cb) {
     this.isAuthenticated = true;
     setTimeout(cb, 100);
   },

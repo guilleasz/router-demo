@@ -1,14 +1,8 @@
-// @flow
 import React from 'react';
-import { type Match } from 'react-router';
-import { type ProductItem } from './Products';
 
 const Product = ({
   match,
   data,
-}: {
-  match: Match,
-  data: ProductItem[]
 }) => {
   const product = data.find(p => String(p.id) === match.params.productId);
   const productData = product ? (

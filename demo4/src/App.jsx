@@ -1,7 +1,5 @@
-// @flow
 import React from 'react';
 import { Link, Route, Switch, Redirect } from 'react-router-dom';
-import { type ContextRouter } from 'react-router';
 import Category from './Category';
 import Products from './Products';
 import Login, { fakeAuth } from './Login';
@@ -23,13 +21,10 @@ const PrivateRoute = ({
   component: Component,
   authed,
   ...rest
-}: {
-  component: React$ComponentType<*>,
-  authed: boolean,
 }) => (
   <Route
     {...rest}
-    render={(props: ContextRouter) => (authed === true ?
+    render={props => (authed === true ?
       <Component {...props} />
       :
       <Redirect to={{ pathname: '/login', state: { from: props.location } }} />)}
