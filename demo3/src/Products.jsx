@@ -60,12 +60,12 @@ const Products = ({ match }: { match: Match}) => {
       </div>
 
       <Route
-        path={`${match.url}/:productId`}
+        path={`${match.path}/:productId`}
         render={props => <Product data={productsData} {...props} />}
       />
       <Route
         exact
-        path={match.url}
+        path={match.path}
         render={() => (
           <div>Por favor seleccione un Producto.</div>
         )}

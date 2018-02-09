@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
 
 /* Home component */
 const Home = () => (
@@ -38,9 +38,20 @@ const App = () => (
     </nav>
 
     {/* Componentes Route son rendereizados si el prop `path` coincide con el URL actual */}
-    <Route path="/" component={Home} />
-    <Route path="/category" component={Category} />
-    <Route path="/products" component={Products} />
+    <Switch>
+      <Route exact path="/" render={() => <Home name="guille" />} />
+      <Route path="/category" component={Category} />
+      <Route path="/products" component={Products} />
+      <Route 
+        path="/:id" 
+        render={() => (
+          <p>
+            Quiero que este texto aparezca para todas 
+            las rutas excepto '/', '/products' y '/category'
+          </p>
+        )} 
+      />
+    </Switch>
   </div>
 );
 

@@ -55,6 +55,7 @@ const App = () => (
       <Route path="/products" component={Products} />
       <Route path="/login" component={Login} />
       <PrivateRoute authed={fakeAuth.isAuthenticated} path="/admin" component={Admin} />
+      <PrivateRoute authed={fakeAuth.isAuthenticated} path="/private" component={() => <div>Esta ruta es privada</div>} />
     </Switch>
 
   </div>
